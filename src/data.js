@@ -1,0 +1,1 @@
+export const fetchUrl = "https://fakestoreapi.com/products";
