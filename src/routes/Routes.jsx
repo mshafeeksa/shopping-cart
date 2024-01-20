@@ -1,12 +1,12 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Home from './Home';
+import Root from './Root';
 import ErrorPage from './Error-page';
 
 export default function Router() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Home/>, 
+            element: <Root/>, 
             errorElement: <ErrorPage/>
         },
     ]);

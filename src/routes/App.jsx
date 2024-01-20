@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchUrl } from "./data";
+import { fetchUrl } from "../data";
 import Router from "./Routes";
 
 export default function App() {
