@@ -1,23 +1,18 @@
+import { sliderImages } from "../data";
+import ImageSlider from "../helper-components/Image-slider";
+import "../styles/image-slider.css"
+import MenuIcons from "../helper-components/Menu-Icons";
+
 export default function Home() {
     return (
         <>
-            <div className="slider-area">
-                <div className="swiper">
-                    {/* Additional required wrapper */}
-                        <div className="swiper-wrapper">
-                        {/* Slides */}
-                        <div className="swiper-slide">Slide 1</div>
-                        <div className="swiper-slide">Slide 2</div>
-                        <div className="swiper-slide">Slide 3</div>
-                    ...
-                </div>
-                {/* If we need pagination */}
-                <div className="swiper-pagination" />
-                {/* If we need navigation buttons */}
-                <div className="swiper-button-prev" />
-                <div className="swiper-button-next" />
-                </div>
+            <div className="sliderArea">
+                <ImageSlider slides={sliderImages} />
+            </div>
+            <div className="menu-area flex w-3/4 mx-auto my-14 justify-evenly">
+                <MenuIcons/>            
             </div>
         </>
     );
 }
+

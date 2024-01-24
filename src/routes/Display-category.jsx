@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchUrl } from "../data";
-import Router from "./Routes";
+import DisplayItem from "../helper-components/Display-grid-item";
 
-export default function App() {
+export default function DisplayCategory({category}) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -16,9 +16,11 @@ export default function App() {
                     );
                 }
                 return response.json();
+                
             })
             .then(json => {
-                setData(json);
+                let filteredJson = json.filter((item)=> item.category === category)
+                setData(filteredJson);
                 setError(null);
             })
             .catch((err) => {
@@ -31,9 +33,13 @@ export default function App() {
     }, []);
     return (
         <div className="app">
-            {loading && <div className="loading-screen"> <h1 className="loading-text">Please wait...</h1> </div>}
+            {loading && <div className="loading-screen"> <h1 className="loading-text">Loading...</h1> </div>}
             {error && <div className="error-screen"> <h1 className="error-text">{`There was an error while loading - ${error}`}</h1> </div>}
-            {data && <Router />}
+            {data &&  <div className="items-container grid grid-cols-2 lg:grid-cols-3 w-full md:w-4/5 lg:w-11/12 2xl:w-3/5 mx-auto my-16 gap-6 justify-items-center">
+                {data.map((item) => {
+                    return (<DisplayItem key={item.id} item={item}/>)
+                })}
+            </div>}
         </div>
     );
 }

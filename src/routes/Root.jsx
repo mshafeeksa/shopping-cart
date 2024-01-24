@@ -5,18 +5,17 @@ import { navItems, payIcons, customerLinks } from "../data";
 import Cart from "../assets/icons/bag.svg";
 import Profile from "../assets/icons/profile.svg";
 
-
-export default function Root() {
+export default function Root({cartCount}) {
     return (
         <>
-            <header className="h-20 bg-gray-100 flex items-center text-gray-600 w-full sticky top-0 shadow-lg">
+            <header className="h-20 bg-gray-100 flex items-center text-gray-600 w-full sticky top-0 shadow-lg z-40">
                 <div className="header-container h-2/5 flex items-end w-full">
                     <div className="logo-section h-full mr-10 shrink-0"><Link to={"/"}><img className="h-full pl-4" src={LogoText} alt="Threaded" /></Link></div>
                     <div className="nav-section flex shrink-0 self-end">
                         <NavItems/>
                     </div>
                     <div className="end-nav-section flex items-end justify-end h-full mr-8 grow ml-4">
-                        <RightHeaderItems/>
+                        <RightHeaderItems cartCount={cartCount} />
                     </div>
                 </div>
             </header>
@@ -29,6 +28,7 @@ export default function Root() {
         </>
     );
 }
+
 
 function Footer() {
     return (
@@ -82,17 +82,17 @@ function InfoLinks() {
     );
 }
 
-function RightHeaderItems() {
+function RightHeaderItems({ cartCount }) {
     return (
         <>
             <form className="search-bar mx-4">
                 <input type="search" placeholder="Search..."/>
                 <button type="submit">Search</button>
             </form>
-            <Link to="profile" className="icon-box h-full flex items-center justify-center mx-4 shrink-0"><img src={Profile} alt="Profile" className="h-5/6"/></Link>
+            <Link to="/" className="icon-box h-full flex items-center justify-center mx-4 shrink-0"><img src={Profile} alt="Profile" className="h-5/6"/></Link>
             <Link className="icon-box h-full flex justify-end items-center relative mx-4 shrink-0">
                 <img src={Cart} alt="Shopping cart" className="h-5/6 shrink-0" />
-                <div className="count-box absolute rounded-full -top-2 -right-2 bg-red-500 size-5 flex justify-center items-center text-white text-xs">0</div>
+                <div className="count-box absolute rounded-full -top-2 -right-2 bg-red-500 size-5 flex justify-center items-center text-white text-xs">{cartCount}</div>
             </Link>
         </>
     );
