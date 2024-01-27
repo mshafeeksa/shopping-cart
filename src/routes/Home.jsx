@@ -9,7 +9,7 @@ export default function Home() {
             <div className="sliderArea">
                 <ImageSlider slides={sliderImages} />
             </div>
-            <div className="menu-area flex w-3/4 mx-auto my-14 justify-evenly">
+            <div className="menu-area flex w-11/12 md:w-3/4 mx-auto my-14 justify-evenly">
                 <MenuIcons/>            
             </div>
         </>

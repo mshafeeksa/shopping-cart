@@ -57,13 +57,13 @@ function Footer() {
                     <button type="button" className="border border-zinc-100 px-2 py-1 rounded-md hover:bg-zinc-100 hover:text-slate-900 transition">Signup</button>
                 </form>
             </div>
-            <div className="bottom flex my-20 mx-20 md:mx-40 justify-between items-center">
+            <div className="bottom flex my-20 mx-2 md:mx-40 justify-between items-center">
                 <div className="customer-info">
                     <h1 className="text-xl font-bold">Customer Information</h1>
                     <InfoLinks/>
                 </div>
                 <div className="logo shrink-0">
-                    <img src={LogoTextWhite} alt="Threaded" className="w-40 shrink-0"/>
+                    <img src={LogoTextWhite} alt="Threaded" className="w-28 xl:w-40 shrink-0"/>
                 </div>
             </div>
             <div className="payment-modes flex justify-center items-center">
