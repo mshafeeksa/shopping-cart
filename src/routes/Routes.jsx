@@ -6,6 +6,7 @@ import DisplayCategory from './Display-category';
 import MainDisplayItem from './Main-display-item';
 import { Men, Women, Jewellery } from '../data';
 import { useState } from 'react';
+import Cart from './Cart';
 
 export default function Router() {
     const [cart, setCart] = useState([]);
@@ -42,6 +43,11 @@ export default function Router() {
                         {
                             path: ":id",
                             element: <MainDisplayItem updateCart={updateCart} cart={cart} key={cart}/>,
+                            errorElement: <ErrorPage />
+                        },
+                        {
+                            path: "cart",
+                            element: <Cart updateCart={updateCart} cart={cart} key={cart}/>,
                             errorElement: <ErrorPage />
                         },        
                     ],

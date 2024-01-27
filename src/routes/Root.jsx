@@ -90,7 +90,7 @@ function RightHeaderItems({ cartCount }) {
                 <button type="submit">Search</button>
             </form>
             <Link to="/" className="icon-box h-full flex items-center justify-center mx-4 shrink-0"><img src={Profile} alt="Profile" className="h-5/6"/></Link>
-            <Link className="icon-box h-full flex justify-end items-center relative mx-4 shrink-0">
+            <Link to="/cart" className="icon-box h-full flex justify-end items-center relative mx-4 shrink-0">
                 <img src={Cart} alt="Shopping cart" className="h-5/6 shrink-0" />
                 <div className="count-box absolute rounded-full -top-2 -right-2 bg-red-500 size-5 flex justify-center items-center text-white text-xs">{cartCount}</div>
             </Link>
@@ -103,7 +103,13 @@ function NavItems() {
         <>
             {navItems.map((item) => {
                 return (
-                    <NavLink key={item.id} to={item.path} className="main-category mx-4 whitespace-nowrap">
+                    <NavLink key={item.id} to={item.path} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active main-category mx-4 whitespace-nowrap"
+                        : isPending
+                        ? "pending main-category mx-4 whitespace-nowrap"
+                        : "main-category mx-4 whitespace-nowrap"
+                    }>
                         {item.name}
                     </NavLink>
                 );

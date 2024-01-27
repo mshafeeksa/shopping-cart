@@ -9,9 +9,9 @@ import sliderImage2 from "./assets/banners/women-apparels.jpg"
 import sliderImage3 from "./assets/banners/formal-wears.jpg"
 import sliderImage4 from "./assets/banners/jewellery.jpg"
 
-import MenMenu from "./assets/icons/men.svg"
-import WomenMenu from "./assets/icons/women.svg"
-import JewelleryMenu from "./assets/icons/jewellery.svg"
+import MenMenu from "./assets/icons/men.jpg"
+import WomenMenu from "./assets/icons/women.jpg"
+import JewelleryMenu from "./assets/icons/jewellery.jpg"
 
 
 export const fetchUrl = "https://fakestoreapi.com/products";

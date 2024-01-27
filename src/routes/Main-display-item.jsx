@@ -64,7 +64,7 @@ export default function MainDisplayItem({updateCart, cart}) {
                         justify-center items-center" onClick={() => { if (qty > 0) setQty(qty - 1) }}>-</button>
                             <span className="qty flex justify-center items-center h-6 w-10 text-xl">{qty}</span>
                             <button className="qty-increase text-white bg-green-600 size-6 text-4xl flex 
-                        justify-center items-center" onClick={() => setQty(qty+1) }>+</button>
+                        justify-center items-center" onClick={() => { if (qty < 9) setQty(qty + 1) }}>+</button>
                     </div>
                         <div className="flex">
                             <button className="w-36 rounded-sm bg-yellow-400 font-bold text-black px-4 py-3 mb-3 hover:bg-yellow-500 transition-all mr-7" onClick={handleAddCart}>ADD TO CART</button>
