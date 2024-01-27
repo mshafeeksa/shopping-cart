@@ -8,9 +8,9 @@ export default function MenuIcons() {
             <Link key={icon.name } to={icon.path} className="menu-link">
                 <div className="icon-main-box flex-col mx-1 md:mx-4">
                     <div className="icon-box border overflow-hidden">
-                        <img src={icon.img} alt={icon.name} className="flex md:flex-col w-60 transition-all" />
+                        <img src={icon.img} alt={icon.name} className="flex w-60 transition-all" />
                     </div>
-                    <span className="text-center text-lg block mt-4">{icon.name}</span>
+                    <span className="text-center text-sm md:text-lg block mt-4">{icon.name}</span>
                 </div>
             </Link>
             );        

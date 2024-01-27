@@ -16,6 +16,12 @@
     position: relative;
 }
 
+@media (max-width: 1000px) {
+    .sliderArea{
+        width: 95%;
+    }
+}
+
 .image-slider-image{
     object-fit: cover;
     object-position: center;
