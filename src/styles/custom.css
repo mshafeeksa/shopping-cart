@@ -93,3 +93,9 @@ input:-webkit-autofill:active {
 .active{
     font-weight: 900;
 }
+
+.loading-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

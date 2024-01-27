@@ -45,7 +45,7 @@ export default function MainDisplayItem({updateCart, cart}) {
     }
 
     return (
-        <div className="app">
+        <div className="app h-full">
             {loading && <div className="loading-screen"> <h1 className="loading-text">Loading...</h1> </div>}
             {error && <div className="error-screen"> <h1 className="error-text">{`There was an error while loading - ${error}`}</h1> </div>}
             {data &&

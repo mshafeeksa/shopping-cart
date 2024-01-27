@@ -23,6 +23,7 @@ export default function Cart({ updateCart, cart }) {
     return (
         <div className="cart-container w-3/4 mx-auto">
             <div className="header text-5xl my-10 font-bold">Your Cart</div>
+            {cart.length===0 && <h1 className="text-center">You cart is empty!</h1>}
             {cart.map((item,index) => {
                 return (
                     <div key={item} className="item-wrapper flex justify-center my-8 border-b border-slate-500 py-8">
@@ -47,12 +48,12 @@ export default function Cart({ updateCart, cart }) {
                     </div>);
             })}
             <div className="checkout-section flex justify-end my-8 items-center font-bold">
-                <div className="grand-total mr-10 text-3xl">
+                {cart.length>0 && <div className="grand-total mr-10 text-3xl">
                     Grand Total: Rs. {calculateCartTotal()}/-
-                </div>
-                <div className="checkout-button bg-yellow-600 flex justify-center text-white px-3 py-1 text-2xl hover:bg-yellow-800 transition-all">
+                </div>}
+                {cart.length>0 && <div className="checkout-button bg-yellow-600 flex justify-center text-white px-3 py-1 text-2xl hover:bg-yellow-800 transition-all">
                     <button>Checkout ►</button>
-                </div>
+                </div>}
             </div>
         </div>
     );
