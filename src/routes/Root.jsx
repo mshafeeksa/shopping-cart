@@ -4,12 +4,13 @@ import LogoTextWhite from "../assets/logo/threaded-text-white.png"
 import { navItems, payIcons, customerLinks } from "../data";
 import Cart from "../assets/icons/bag.svg";
 import Profile from "../assets/icons/profile.svg";
-
+import Burger from "../assets/icons/burger.svg";
+import "../styles/burger.css"
 export default function Root({cartCount}) {
     return (
         <>
-            <header className="h-20 bg-gray-100 flex items-center text-gray-600 w-full sticky top-0 shadow-lg z-40">
-                <div className="header-container h-2/5 flex items-end w-full">
+            <header className="h-12 xl:h-20 bg-gray-100 flex items-center text-gray-600 w-full sticky top-0 shadow-lg z-40">
+                <div className="hidden xl:header-container xl:h-2/5 xl:flex xl:items-end xl:w-full">
                     <div className="logo-section h-full mr-10 shrink-0"><Link to={"/"}><img className="h-full pl-4" src={LogoText} alt="Threaded" /></Link></div>
                     <div className="nav-section flex shrink-0 self-end">
                         <NavItems/>
@@ -17,6 +18,21 @@ export default function Root({cartCount}) {
                     <div className="end-nav-section flex items-end justify-end h-full mr-8 grow ml-4">
                         <RightHeaderItems cartCount={cartCount} />
                     </div>
+                </div>
+                <div className="xl:hidden h-8 mx-0 xl:mx-4 flex justify-between w-full">
+                    <label className="hamburger-menu">
+                        <input type="checkbox" />
+                    </label>
+                    <aside className="sidebar">
+                        <nav>
+                            <div>This</div>
+                            <div>Is</div>
+                            <div>The</div>
+                            <div>Sidebar</div>
+                        </nav>
+                    </aside>
+                    <Link to="/" className="h-full"><img src={LogoText} alt="Threaded" className="h-full"/></Link>
+                    <Link to="/cart" className="h-full"><img src={Cart} alt="Cart" className="h-full"/></Link>
                 </div>
             </header>
             <div id="main-body" className="text-gray-600 grow">

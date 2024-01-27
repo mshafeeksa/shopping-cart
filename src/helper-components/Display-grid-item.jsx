@@ -5,7 +5,7 @@ export default function DisplayItem({ item }) {
     return (
         <div className="item-box m-14 flex flex-col hover:scale-105 transition-all">
             <Link to={"/" + item.id} className="h-full">
-                <div className="image-title-box h-full flex flex-col justify-between items-center border border-slate-600 p-4 w-72 min-h-96 mx-7 relative">
+                <div className="image-title-box h-full flex flex-col justify-between items-center border border-slate-600 p-4 w-72 min-h-96 mx-7 relative shadow-lg">
                     <div className="image-container">
                         <img src={item.image} alt={item.title} className="w-56 h-64 object-contain" />
                         <div className="rating-box absolute inline top-2 right-2 z-10 bg-white bg-opacity-80">
@@ -19,5 +19,5 @@ export default function DisplayItem({ item }) {
         </div>  
     );
 }
-
+4
                 
