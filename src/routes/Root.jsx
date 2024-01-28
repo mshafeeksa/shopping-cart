@@ -19,20 +19,26 @@ export default function Root({cartCount}) {
                         <RightHeaderItems cartCount={cartCount} />
                     </div>
                 </div>
-                <div className="xl:hidden h-8 mx-0 xl:mx-4 flex justify-between w-full">
-                    <label className="hamburger-menu">
-                        <input type="checkbox" />
-                    </label>
-                    <aside className="sidebar">
-                        <nav>
-                            <div>This</div>
-                            <div>Is</div>
-                            <div>The</div>
-                            <div>Sidebar</div>
-                        </nav>
-                    </aside>
-                    <Link to="/" className="h-full"><img src={LogoText} alt="Threaded" className="h-full"/></Link>
-                    <Link to="/cart" className="h-full"><img src={Cart} alt="Cart" className="h-full"/></Link>
+                <div className="xl:hidden h-full mx-0 xl:mx-4 flex justify-between w-full items-center">
+                    <div className="menu-section relative">
+                        <label className="hamburger-menu">
+                            <input type="checkbox" />
+                        </label>
+                    
+                        <aside className="sidebar">
+                            <nav>
+                                <div>This</div>
+                                <div>Is</div>
+                                <div>The</div>
+                                <div>Sidebar</div>
+                            </nav>
+                        </aside>
+                    </div>
+                    <Link to="/" className="h-full"><img src={LogoText} alt="Threaded" className="h-full py-2"/></Link>
+                    <Link to="/cart" className="icon-box h-3/4 flex justify-center items-center relative mx-2 shrink-0">
+                        <img src={Cart} alt="Shopping cart" className="h-5/6 shrink-0" />
+                        <div className="count-box absolute rounded-full -top-1 -right-1 bg-red-500 size-5 flex justify-center items-center text-white text-xs">{cartCount}</div>
+                    </Link>
                 </div>
             </header>
             <div id="main-body" className="text-gray-600 grow">
@@ -50,14 +56,14 @@ function Footer() {
     return (
         <>
             <div className="signup-box flex flex-col justify-center items-center">
-                <h1 className="text-lg lg:text-2xl my-3 font-bold">Signup for 10% discount</h1>
+                <h1 className="text-lg lg:text-2xl my-1 md:my-3 font-bold">Signup for 10% discount</h1>
                 <h2 className="my-3 text-sm lg:text-lg">Get Discounts & News Direct to Your Inbox!</h2>
-                <form className="my-9">
-                    <input type="email" name="email" className="border rounded-sm border-zinc-100 bg-slate-900 mr-4 transition"/>
-                    <button type="button" className="border border-zinc-100 px-2 py-1 rounded-md hover:bg-zinc-100 hover:text-slate-900 transition">Signup</button>
+                <form className="my-3 md:my-9 flex px-3 w-full justify-center items-center">
+                    <input type="email" name="email" className="border rounded-sm border-zinc-100 bg-slate-900 mr-1 ml- md:mr-4 transition my-3 grow shrink md:grow-0"/>
+                    <button type="button" className="border border-zinc-100 px-2 py-1 rounded-md hover:bg-zinc-100 hover:text-slate-900 transition h-8">Signup</button>
                 </form>
             </div>
-            <div className="bottom flex my-20 mx-2 md:mx-40 justify-between items-center">
+            <div className="bottom flex my-2 md:my-20 mx-2 md:mx-40 justify-between items-center">
                 <div className="customer-info">
                     <h1 className="text-lg lg:text-xl font-bold">Customer Information</h1>
                     <InfoLinks/>

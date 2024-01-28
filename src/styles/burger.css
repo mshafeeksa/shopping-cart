@@ -9,10 +9,10 @@ body {
 }
 
 :root {
-    --bar-width: 30px;
-    --bar-height: 5px;
-    --hamburger-gap: 6px;
-    --foreground: #333;
+    --bar-width: 20px;
+    --bar-height: 4px;
+    --hamburger-gap: 3px;
+    --foreground: #758599;
     --background: white;
     --hamburger-margin: 8px;
     --animation-timing: 200ms ease-in-out;
@@ -28,10 +28,14 @@ body {
     gap: var(--hamburger-gap);
     width: max-content;
     position: absolute;
-    top: var(--hamburger-margin);
-    left: var(--hamburger-margin);
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    margin-left: 6px;
     z-index: 2;
     cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .hamburger-menu:has(input:checked) {
@@ -66,6 +70,7 @@ body {
     margin: 0;
     outline: none;
     pointer-events: none;
+    width: var(--bar-width);
 }
 
 .hamburger-menu:has(input:checked)::before {
@@ -97,8 +102,13 @@ body {
     min-height: 100svh; */
     height: 100vh;
     width: var(--sidebar-width);
+    position: absolute;
 }
 
 .hamburger-menu:has(input:checked)+.sidebar {
     translate: 0;
+}
+
+.menu-section{
+    width: var(--bar-width);
 }
