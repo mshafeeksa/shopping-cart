@@ -35,7 +35,7 @@ export default function DisplayCategory({category}) {
         <div className="app">
             {loading && <div className="loading-screen"> <h1 className="loading-text">Loading...</h1> </div>}
             {error && <div className="error-screen"> <h1 className="error-text">{`There was an error while loading - ${error}`}</h1> </div>}
-            {data &&  <div className="items-container grid grid-cols-2 lg:grid-cols-3 w-full md:w-4/5 lg:w-11/12 2xl:w-3/5 mx-auto my-16 gap-6 justify-items-center">
+            {data &&  <div className="items-container grid grid-cols-2 lg:grid-cols-3 w-full md:w-4/5 lg:w-11/12 2xl:w-3/5 mx-auto my-16 gap-0 sm:gap-6 justify-items-center items-stretch">
                 {data.map((item) => {
                     return (<DisplayItem key={item.id} item={item}/>)
                 })}

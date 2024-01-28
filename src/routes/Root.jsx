@@ -50,8 +50,8 @@ function Footer() {
     return (
         <>
             <div className="signup-box flex flex-col justify-center items-center">
-                <h1 className="text-2xl my-3 font-bold">Signup for 10% discount</h1>
-                <h2 className="my-3">Get Discounts & News Direct to Your Inbox!</h2>
+                <h1 className="text-lg lg:text-2xl my-3 font-bold">Signup for 10% discount</h1>
+                <h2 className="my-3 text-sm lg:text-lg">Get Discounts & News Direct to Your Inbox!</h2>
                 <form className="my-9">
                     <input type="email" name="email" className="border rounded-sm border-zinc-100 bg-slate-900 mr-4 transition"/>
                     <button type="button" className="border border-zinc-100 px-2 py-1 rounded-md hover:bg-zinc-100 hover:text-slate-900 transition">Signup</button>
@@ -59,7 +59,7 @@ function Footer() {
             </div>
             <div className="bottom flex my-20 mx-2 md:mx-40 justify-between items-center">
                 <div className="customer-info">
-                    <h1 className="text-xl font-bold">Customer Information</h1>
+                    <h1 className="text-lg lg:text-xl font-bold">Customer Information</h1>
                     <InfoLinks/>
                 </div>
                 <div className="logo shrink-0">
@@ -90,7 +90,7 @@ function InfoLinks() {
             <ul>
                 {customerLinks.map((linkItem) => {
                     return (
-                        <li key={linkItem.id} className="my-3"><Link to={"/"} className="hover:border-b border-zinc-100">{linkItem.text}</Link></li>
+                        <li key={linkItem.id} className="my-3 text-xs lg:text-lg"><Link to={"/"} className="hover:border-b border-zinc-100">{linkItem.text}</Link></li>
                     );
                 })}
             </ul>
