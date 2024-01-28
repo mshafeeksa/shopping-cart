@@ -13,16 +13,16 @@ body {
     --bar-height: 4px;
     --hamburger-gap: 3px;
     --foreground: #758599;
+    --sidebar-background: #333;
     --background: white;
     --hamburger-margin: 8px;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
-    --sidebar-width: max(150px,25%);
+    --sidebar-width: max(200px,25%);
 }
 
 .hamburger-menu {
     --x-width: calc(var(--hamburger-height) * 1.41421356237);
-
     display: flex;
     flex-direction: column;
     gap: var(--hamburger-gap);
@@ -95,7 +95,7 @@ body {
     translate: -100%;
     padding: 0.5rem 1rem;
     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
-    background-color: var(--foreground);
+    background-color: var(--sidebar-background);
     color: var(--background);
     max-width: 10rem;
     /* min-height: 100vh;
@@ -110,5 +110,7 @@ body {
 }
 
 .menu-section{
-    width: var(--bar-width);
+    width: 40px;
+    height: 100%;
+    align-self: self-start;
 }

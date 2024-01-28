@@ -22,16 +22,11 @@ export default function Root({cartCount}) {
                 <div className="xl:hidden h-full mx-0 xl:mx-4 flex justify-between w-full items-center">
                     <div className="menu-section relative">
                         <label className="hamburger-menu">
-                            <input type="checkbox" />
+                            <input type="checkbox"/>
                         </label>
                     
-                        <aside className="sidebar">
-                            <nav>
-                                <div>This</div>
-                                <div>Is</div>
-                                <div>The</div>
-                                <div>Sidebar</div>
-                            </nav>
+                        <aside className="sidebar flex flex-col justify-start">
+                            <SideNavItems/>
                         </aside>
                     </div>
                     <Link to="/" className="h-full"><img src={LogoText} alt="Threaded" className="h-full py-2"/></Link>
@@ -131,6 +126,25 @@ function NavItems() {
                         : isPending
                         ? "pending main-category mx-4 whitespace-nowrap"
                         : "main-category mx-4 whitespace-nowrap"
+                    }>
+                        {item.name}
+                    </NavLink>
+                );
+            })}
+        </>
+    );
+}
+function SideNavItems() {
+    return (
+        <>
+            {navItems.map((item) => {
+                return (
+                    <NavLink key={item.id} to={item.path} className={({ isActive, isPending }) =>
+                      isActive
+                        ? "active whitespace-nowrap"
+                        : isPending
+                        ? "pending whitespace-nowrap"
+                        : "whitespace-nowrap"
                     }>
                         {item.name}
                     </NavLink>

@@ -49,15 +49,15 @@ export default function MainDisplayItem({updateCart, cart}) {
             {loading && <div className="loading-screen"> <h1 className="loading-text">Loading...</h1> </div>}
             {error && <div className="error-screen"> <h1 className="error-text">{`There was an error while loading - ${error}`}</h1> </div>}
             {data &&
-            <div className="item-display-container flex justify-around items-center w-3/4 mx-auto my-32">
+            <div className="item-display-container flex flex-col md:flex-row justify-around items-center w-full md:w-3/4 mx-auto my-4 md:my-32">
                 <div className="image-area grow w-full flex justify-center">
                     <img src={data.image} alt={data.title} className="item-image w-1/2" />
                 </div>
-                <div className="details-area flex flex-col items-start grow w-full px-11">
-                        <h1 className="text-2xl font-bold">{data.title}</h1>    
+                <div className="details-area flex flex-col items-center md:items-start grow w-full px-2 md:px-11">
+                        <h1 className="text-lg text-center md:text-2xl font-bold">{data.title}</h1>    
                         <span className="px-2 py-1 my-2 border border-slate-300">{`${data.rating.rate} ⭐ | ${data.rating.count} Ratings`}</span>
                         <div className="seperation border-b w-full my-4 border-slate-400"></div>
-                    <div className="price text-3xl font-bold">{`Rs.${data.price * priceMultiplier}/-`}</div>
+                    <div className="price text-xl md:text-3xl font-bold">{`Rs.${data.price * priceMultiplier}/-`}</div>
                     <span className="font-bold text-sm text-blue-600">inclusive of all taxes</span>
                     <div className="quantity-counter flex border border-slate-600 my-4 overflow-hidden rounded-sm">
                             <button className="qty-decrease text-white bg-red-600 size-6 text-4xl flex 
@@ -66,11 +66,11 @@ export default function MainDisplayItem({updateCart, cart}) {
                             <button className="qty-increase text-white bg-green-600 size-6 text-4xl flex 
                         justify-center items-center" onClick={() => { if (qty < 9) setQty(qty + 1) }}>+</button>
                     </div>
-                        <div className="flex">
-                            <button className="w-36 rounded-sm bg-yellow-400 font-bold text-black px-4 py-3 mb-3 hover:bg-yellow-500 transition-all mr-7" onClick={handleAddCart}>ADD TO CART</button>
+                        <div className="flex flex-col md:flex-row items-center">
+                            <button className="w-36 rounded-sm bg-yellow-400 font-bold text-black px-4 py-3 mb-3 hover:bg-yellow-500 transition-all m-0 md:mr-7" onClick={handleAddCart}>ADD TO CART</button>
                             {cart.length > 0 && <Link to="/cart"><button className="w-36 rounded-sm bg-blue-600 font-bold text-white px-4 py-3 mb-3 hover:bg-blue-800 transition-all">{`GO TO CART  ►`}</button></Link>}
                         </div>  
-                    <h2 className="text-lg text-justify">{data.description}</h2>
+                    <h2 className="text-base md:text-lg text-justify">{data.description}</h2>
                 </div>
             </div> }
         </div>
